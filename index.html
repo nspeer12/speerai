@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Portfolio - Nick Speer</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-beta1/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: 'Courier New', monospace;
+    }
+    .section {
+      border: 1px solid red;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .canvas-container {
+      height: 80vh;
+    }
+    .alternate {
+      flex-direction: row-reverse;
+    }
+    h1 {
+      text-decoration: underline;
+      text-decoration-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <div id="intro" class="row section">
+      <div class="col-sm">
+        <h1>Introduction</h1>
+        <p>Hi I'm Nick Speer</p>
+      </div>
+      <div id="intro-canvas" class="col-sm canvas-container"></div>
+    </div>
+
+    <div id="work" class="row section alternate">
+      <div class="col-sm">
+        <h1>Work</h1>
+        <p>Here's my work</p>
+      </div>
+      <div id="work-canvas" class="col-sm canvas-container"></div>
+    </div>
+
+    <div id="projects" class="row section">
+      <h1>Projects</h1>
+      <p>Here's my projects</p>
+      <div id="projects-canvas" class="col-sm canvas-container"></div>
+    </div>
+
+    <div id="interests" class="row section alternate">
+      <h1>Interests</h1>
+      <p>Here's my interests</p>
+      <div id="interests-canvas" class="col-sm canvas-container"></div>
+    </div>
+  </div>
+  <script type="module" src="main.js"></script>
+</body>
+</html>
