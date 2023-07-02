@@ -75,7 +75,7 @@ function createSceneAndCamera() {
 
     // Load a texture
     const textureLoader = new THREE.TextureLoader();
-    const plasmaTexture = textureLoader.load('img/plasma.jpeg');
+    const plasmaTexture = textureLoader.load('/img/plasma.jpeg');
 
     const innerTorusMaterial = new THREE.MeshBasicMaterial({
         map: plasmaTexture,
