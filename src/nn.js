@@ -4,7 +4,9 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 function createSceneAndCamera() {
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-  camera.position.z = 20; // Adjust camera position to fit neural network
+  camera.position.z = 12; // Adjust camera position to fit neural network
+  camera.position.y = 5;
+  camera.position.x = 5;
   return { scene, camera };
 }
 
@@ -41,7 +43,7 @@ export function nn() {
   const { scene, camera } = createSceneAndCamera();
   addLightingToScene(scene);
   const renderer = createRenderer('projects');
-  const layers = [2, 3, 5, 8, 5, 3];
+  const layers = [3, 8, 8, 8, 3];
   const nodes = [];
   const connections = [];
 
@@ -80,7 +82,7 @@ export function nn() {
   
   function animate() {
     requestAnimationFrame(animate);
-    let time = performance.now() * 0.0005; // Convert time to seconds
+    let time = performance.now() * 0.0003; // Convert time to seconds
   
     for (let i = 0; i < connections.length; i++) {
       // Change the color of the connection
@@ -96,8 +98,8 @@ export function nn() {
     }
   
     // Rotate the camera around the scene
-    camera.position.x = Math.cos(time) * 20;
-    camera.position.z = Math.sin(time) * 20;
+    camera.position.x = Math.cos(time) * 5;
+    //camera.position.z = Math.sin(time) * 2;
     camera.position.y = Math.sin(time) * 2;
     camera.lookAt(scene.position);
   

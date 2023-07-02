@@ -19,11 +19,6 @@ body {
     width: 25vw;
 }
 
-h1 {
-    text-decoration: underline;
-    text-decoration-color: #888;
-}
-
 h1,
 h2,
 h3,
@@ -40,9 +35,6 @@ section {
     margin-right: 2.5em;
 }
 
-span {
-    color: #4A90E2;
-}
 
 [data-bs-theme="dark"] body {
     background-color: black;

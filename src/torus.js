@@ -5,7 +5,9 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 function createSceneAndCamera() {
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.z = 5;
+    camera.position.z = -2;
+    camera.position.y = 0;
+    camera.position.x = 0;
     return { scene, camera };
   }
   
@@ -119,33 +121,36 @@ function createSceneAndCamera() {
     function animate() {
       function frame() {
         requestAnimationFrame(frame);
-  
+      
         // Update the rotation for outer torus
         outerTorus.rotation.x += 0.001;
-
         outerTorus.rotation.y += 0.0003;
-
+    
         innerTorus.rotation.x += 0.001;
         innerTorus.rotation.y += 0.0003;
         innerTorus.rotation.z = -1 * Date.now() / 1550;
-
-  
-        // Add wobble-like rotation to both tori
-        // outerTorus.rotation.z = Math.sin(Date.now() / 2000);
-        // innerTorus.rotation.z = Math.sin(Date.now() / 2000);
-  
-        // Alternate the color of the inner torus
-        innerTorusMaterial.color.setHex(Date.now() * 0.00001 % 2 > 1 ? 0x00FFFF : 0xFFFFFF);
-
+    
         fieldLines.rotation.x += 0.001;
         fieldLines.rotation.y += 0.0003;
         fieldLines.rotation.z = -1* Date.now() / 1500;
-  
+    
+        // Alternate the color of the inner torus
+        innerTorusMaterial.color.setHex(Date.now() * 0.00001 % 2 > 1 ? 0x00FFFF : 0xFFFFFF);
+    
+        let time = performance.now() * 0.0005; // Convert time to seconds
+    
+        // Rotate the camera around the scene
+        //camera.position.x = Math.cos(time) * 1;
+        //camera.position.y = Math.sin(time) * 1;
+        camera.position.z = 2.5 + Math.sin(time) * 0.1;
+        camera.lookAt(scene.position);
+    
         controls.update();
         renderer.render(scene, camera);
       }
       frame();
     }
+    
   
     animate();
   }
