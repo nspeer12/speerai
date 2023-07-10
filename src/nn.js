@@ -43,7 +43,7 @@ export function nn() {
   const { scene, camera } = createSceneAndCamera();
   addLightingToScene(scene);
   const renderer = createRenderer('education');
-  const layers = [2, 3, 5, 5, 3, 2];
+  const layers = [3, 5, 5, 5, 3];
   const nodes = [];
   const connections = [];
 
