@@ -17,11 +17,11 @@
 </head>
 
 <body>
-  <div class="container-fluid mx-5">
+  <div class="container-fluid">
 
     <div class="row">
       <nav id="sidebar"
-        class="col-md-1 col-lg-1 d-md-block d-sm-block d-flex flex-column sidebar custom-sidebar navbar-dark collapse justify-content-center vh-50">
+        class="col-md-1 col-lg-1 d-lg-block d-md-none d-flex flex-column sidebar custom-sidebar navbar-dark collapse justify-content-center vh-50">
         <div class="position-sticky pt-3">
           <ul class="nav flex-column">
             <li class="nav-item">
@@ -59,7 +59,7 @@
       </nav>
 
 
-      <main class="col-md-10 offset-md-1 col-lg-10 offset-lg-1 col-xs-11 px-md-3">
+      <main class="col-md-10 offset-md-1 col-lg-10 offset-lg-1 col-xs-11 px-lg-4 px-md-4 px-sm-4 px-xs-3">
         <div id="intro" class="row section supersection vertical-center" data-nav="intro">
           <div class="col-md-12 col-lg-12 col-sm-12">
             <h1 class="display-1"><span style="font-weight: lighter">Nick </span><span
@@ -84,7 +84,7 @@
 
         <div class="section supersection row py-5" data-nav="work" id="work">
 
-          <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+          <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12 ">
             <h2 class="display-4">Field Application Engineer</h2>
             <h2>Levatas</h2>
             <p>February 2022 - July 2023 | West Palm Beach, Florida</p>
@@ -103,19 +103,16 @@
               on robots, navigating fluently through multiple operating systems, networking
               infrastructure, and programming languages to minimize downtime and ensure smooth operation.</p>
           </div>
-          <div class="col-lg-6 col-md-12 d-sm-block">
-            <div class="video-container mx-2">
-              <iframe class="d-sm-none d-xs-none" src="https://www.youtube.com/embed/vOq0M7kaywI?controls=0" title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
+          <div class="col-lg-7 col-md-12 col-sm-12 d-sm-block d-xs-none pb-5">
+            <div class="video-container ratio ratio-16x9">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/vOq0M7kaywI" allowfullscreen></iframe>
             </div>
           </div>
         </div>
 
         <div id="projects" class="container-fluid supersection py-5" data-nav="projects">
           <div class="section row">
-            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
               <div class="project">
                 <h2 class="project-title"><a class="display-4" href="https://www.youtube.com/watch?v=8O8kd8Ywcwo"
                     target="_blank">Dexter</a></h2>
@@ -127,19 +124,16 @@
                 <p><strong>Technologies used:</strong> OpenCV, TensorFlow, GPT, FastAPI, React</p>
               </div>
             </div>
-            <div class="col-lg-6">
-              <div class="video-container mx-2">
-                <iframe class="d-sm-none d-xs-none" src="https://www.youtube.com/embed/8O8kd8Ywcwo?controls=0" title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen></iframe>
+            <div class="col-lg-7 col-md-12 d-md-block d-sm-none">
+              <div class="video-container ratio ratio-16x9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/8O8kd8Ywcwo?controls=0" allowfullscreen></iframe>
               </div>
             </div>
           </div>
           <div class="section row">
 
-            <div class="col-lg-4">
-              <div class="project">
+            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+              <div class="project justify-content-left">
                 <h2 class="project-title"><a class="display-4" href="https://flownotes.ai"
                     target=_blank>Flownotes.ai</a></h2>
                 <p class="lead"><strong>Flownotes</strong> is a simple note taking app
@@ -151,9 +145,9 @@
                 <p><strong>Technologies used:</strong> Flutter, Vue.js, FastAPI, OpenAI, Spacy, MongoDB</p>
               </div>
             </div>
-            <div class="col-lg-8 col-md-8 d-xs-block d-sm-none">
+            <div class="col-lg-8 col-md-12 d-xs-none d-sm-block">
               <div class="image-container">
-                <img class="d-sm-none d-xs-none" src="img/flownotes-demo.png" style="width: 100%; height: auto;" alt="Flownotes Demo" />
+                <img class="d-sm-none d-md-block" src="img/flownotes-demo.png" style="width: 100%; height: auto;" alt="Flownotes Demo" />
               </div>
             </div>
           </div>
@@ -161,7 +155,7 @@
 
 
         <div id="research" class="row section supersection" data-nav="research">
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
             <h2 class="display-5">AI Researcher</h2>
             <h3>University of Florida</h3>
             <p>October 2021 - January 2022 | Gainesville, Florida</p>
@@ -178,16 +172,16 @@
               ML
               techniques to various problems within their field.</p>
           </div>
-          <div id="torus-canvas" class="col-lg-8 col-md-8 d-xs-block canvas-container"></div>
+          <div id="torus-canvas" class="col-lg-8 col-md-12 d-sm-block d-xs-none canvas-container"></div>
         </div>
 
 
         <div id="education" class="row section supersection" data-nav="education">
-          <div class="col-sm-5 col-md-5 col-lg-5 col-xs-12">
+          <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
             <div class="education">
               <h2 class="display-5">Computer Science B.S.</h2>
               <h3>University of Central Florida</h3>
-              <p>2027 - 2021 | Orlando, Fdolorida</p>
+              <p>2027 - 2021 | Orlando, Florida</p>
               <p>
                 I spent 4 years studying computer science, from the 0's and 1's to the rapidly emerging field of machine
                 learning.
@@ -219,7 +213,7 @@
               </p>
             </div>
           </div>
-          <div id="education-canvas" class="col-md-7 col-lg-7 col-sm-7 d-xs-block canvas-container"></div>
+          <div id="education-canvas" class="col-lg-7 col-md-12 col-sm-12 d-sm-block d-xs-none canvas-container"></div>
         </div>
 
         <div class="section supersection" id="contact" data-nav="contact">

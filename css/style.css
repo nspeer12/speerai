@@ -48,21 +48,18 @@ section {
     /* Make each section the height of the viewport */
 }
 
-.video-container {
+/* .video-container {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%;
-    /* 16:9 Aspect Ratio */
-    height: 0;
+    overflow: hidden;
+    padding-bottom: 56.25;
 }
 
 .video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 90%;
-    height: 90%;
-}
+    width: 100%;
+    height: 100%;
+    min-height: 500px; /* Or set the height you prefer */
+} */
 
 .navbar.bg-dark {
     background-color: black !important;
