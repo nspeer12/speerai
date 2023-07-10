@@ -20,7 +20,7 @@ function addLightingToScene(scene) {
 
 function createRenderer() {
     // Get the parent container
-    var parentContainer = document.getElementById('projects-canvas');
+    var parentContainer = document.getElementById('education-canvas');
 
     // Get width and height of the parent container
     var width = parentContainer.offsetWidth;
@@ -42,7 +42,7 @@ function createControls(camera, renderer) {
 export function nn() {
   const { scene, camera } = createSceneAndCamera();
   addLightingToScene(scene);
-  const renderer = createRenderer('projects');
+  const renderer = createRenderer('education');
   const layers = [3, 8, 8, 8, 3];
   const nodes = [];
   const connections = [];
@@ -90,7 +90,7 @@ export function nn() {
       connections[i].material.color = color;
   
       // Change the transparency of the connection
-      connections[i].material.opacity = (Math.sin(time * 2 + i / connections.length * Math.PI) + 1) / 2;
+      connections[i].material.opacity = (Math.sin(time * 1.25 + i / connections.length * Math.PI) + 0.2) / 2;
   
       // Change the color of the nodes
       connections[i].nodeStart.material.color = color;

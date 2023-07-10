@@ -35,7 +35,6 @@ section {
     margin-right: 2.5em;
 }
 
-
 [data-bs-theme="dark"] body {
     background-color: black;
     color: #f8f9fa;
@@ -47,17 +46,13 @@ section {
 
 .container {
     scroll-snap-type: y mandatory;
-    /* This makes the scrolling snap along the y-axis */
     overflow-y: scroll;
-    /* Enable vertical scrolling */
-    height: 100vh;
-    /* Set the height to the height of the viewport */
 }
 
 .section {
     scroll-snap-align: start;
     /* This snaps the start of each section to the start of the container */
-    height: 100vh;
+    height: 80vh;
     /* Make each section the height of the viewport */
 }
 
@@ -76,3 +71,60 @@ section {
     width: 90%;
     height: 90%;
 }
+
+.navbar.bg-dark {
+    background-color: black !important;
+}
+
+
+#sidebar {
+    position: fixed;
+    top: 70%;
+    left: 0;
+    height: 100%;
+}
+
+#sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#sidebar .active {
+    color: #068FFF;
+}
+
+.custom-sidebar a {
+    color: #aaa;
+}
+
+.vertical-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.project-title {
+    color: inherit;
+}
+
+.project-title a {
+    color: inherit;
+    /* this makes the link color the same as the parent .project-title color */
+    text-decoration: none;
+}
+
+.project-title a:hover {
+    color: rgb(23, 110, 197);
+}
+
+
+.icon-large {
+    font-size: 2rem;
+    /* adjust this value to get your desired icon size */
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 20px; /* adjust this value to change the spacing between icons */
+  }
