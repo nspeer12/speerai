@@ -4,7 +4,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 function createSceneAndCamera() {
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-  camera.position.z = 12; // Adjust camera position to fit neural network
+  camera.position.z = 15; // Adjust camera position to fit neural network
   camera.position.y = 5;
   camera.position.x = 5;
   return { scene, camera };
@@ -43,7 +43,7 @@ export function nn() {
   const { scene, camera } = createSceneAndCamera();
   addLightingToScene(scene);
   const renderer = createRenderer('education');
-  const layers = [3, 8, 8, 8, 3];
+  const layers = [2, 3, 5, 5, 3, 2];
   const nodes = [];
   const connections = [];
 
