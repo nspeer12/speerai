@@ -4,11 +4,18 @@ body {
 }
 
 .section {
-    height: 100vh;
+    height: 110vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
+@media (max-width: 1080px) {
+    .section {
+      margin-bottom: 12rem; /* change this to a value that works for you */
+    }
+  }
+  
 
 
 h1,
@@ -38,7 +45,7 @@ h6 {
 .section {
     scroll-snap-align: start;
     /* This snaps the start of each section to the start of the container */
-    height: 80vh;
+    height: 100vh;
     /* Make each section the height of the viewport */
 }
 
