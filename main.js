@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Track all sections that have an `id` applied
-    document.querySelectorAll('section[id]').forEach((section) => {
-        observer.observe(section);
+    document.querySelectorAll('supersection[id]').forEach((supersection) => {
+        observer.observe(supersection);
     });
 
 });
@@ -63,7 +63,19 @@ resize();
 window.addEventListener('resize', resize);
 
 
-// skillStack();
-nn();
-renderTorus();
-// spot();
+let isAnimating = true;
+
+const toggleSwitch = document.getElementById('toggle-switch');
+
+toggleSwitch.addEventListener('change', (event) => {
+
+  isAnimating = event.target.checked;
+
+  console.log('Animation: ', isAnimating);
+
+  // Start or stop the animations
+  if (isAnimating) {
+    nn(isAnimating);
+    renderTorus(isAnimating);
+  }
+});

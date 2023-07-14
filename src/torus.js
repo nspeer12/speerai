@@ -49,6 +49,11 @@ function createSceneAndCamera() {
   
   function animate(controls, renderer, scene, camera) {
     function frame() {
+
+      if (!isAnimating) {
+        return;
+      }
+      
       requestAnimationFrame(frame);
       controls.update();
       renderer.render(scene, camera);
@@ -56,7 +61,7 @@ function createSceneAndCamera() {
     frame();
   }
 
-  export function renderTorus() {
+  export function renderTorus(isAnimating) {
     const { scene, camera } = createSceneAndCamera();
     addLightingToScene(scene);
     const renderer = createRenderer('torus');
@@ -119,6 +124,11 @@ function createSceneAndCamera() {
   
     // Modify the animate function to include the torus spinning
     function animate() {
+
+      if (!isAnimating) {
+        return;
+      }
+
       function frame() {
         requestAnimationFrame(frame);
       
@@ -150,8 +160,7 @@ function createSceneAndCamera() {
       }
       frame();
     }
-    
-  
+
     animate();
   }
   

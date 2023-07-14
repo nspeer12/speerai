@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
+
 function createSceneAndCamera() {
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -39,7 +40,7 @@ function createControls(camera, renderer) {
     return controls;
   }
 
-export function nn() {
+export function nn(isAnimating) {
   const { scene, camera } = createSceneAndCamera();
   addLightingToScene(scene);
   const renderer = createRenderer('education');
@@ -81,6 +82,11 @@ export function nn() {
   const controls = createControls(camera, renderer);
   
   function animate() {
+
+    if (!isAnimating) {
+      return;
+    }
+
     requestAnimationFrame(animate);
     let time = performance.now() * 0.0003; // Convert time to seconds
   
@@ -106,5 +112,6 @@ export function nn() {
     controls.update();
     renderer.render(scene, camera);
   }
+
   animate();
 }  
