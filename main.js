@@ -65,17 +65,21 @@ window.addEventListener('resize', resize);
 
 let isAnimating = true;
 
-const toggleSwitch = document.getElementById('toggle-switch');
 
-toggleSwitch.addEventListener('change', (event) => {
+nn(isAnimating);
+renderTorus(isAnimating);
 
-  isAnimating = event.target.checked;
+// const toggleSwitch = document.getElementById('toggle-switch');
 
-  console.log('Animation: ', isAnimating);
+// toggleSwitch.addEventListener('change', (event) => {
 
-  // Start or stop the animations
-  if (isAnimating) {
-    nn(isAnimating);
-    renderTorus(isAnimating);
-  }
-});
+//   isAnimating = event.target.checked;
+
+//   console.log('Animation: ', isAnimating);
+
+//   // Start or stop the animations
+//   if (isAnimating) {
+//     nn(isAnimating);
+//     renderTorus(isAnimating);
+//   }
+// });

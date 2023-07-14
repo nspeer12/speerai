@@ -61,6 +61,21 @@ h6 {
     }
   }
   
+
+@media (max-width: 767px) {
+    .hide-mobile {
+        display: none;
+    }
+}
+
+/* Show on tablets and larger */
+@media (min-width: 768px) {
+    .hide-mobile {
+        display: block; /* or whatever display property it should have */
+    }
+}
+
+
 .navbar.bg-dark {
     background-color: black !important;
 }
