@@ -26,24 +26,25 @@ document.addEventListener('DOMContentLoaded', () => {
 // Set the maximum viewport width for which videos should be hidden
 const maxVideoViewportWidth = 768; // Adjust this value as needed
 
-function handleResize() {
-    // Get all the YouTube iframes on the page
-    const videos = document.querySelectorAll('iframe[src^="https://www.youtube.com"]');
+function hideMobile() {
+
+    // select anythign with a class of hide-mobile
+    const hideMobile = document.querySelectorAll('.hide-mobile');
     
     // Get the current viewport width
     const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
     
     // Show or hide videos based on the viewport width
-    for (let video of videos) {
-        video.style.display = viewportWidth <= maxVideoViewportWidth ? 'none' : 'block';
+    for (let element of hideMobile) {
+        element.style.display = viewportWidth <= maxVideoViewportWidth ? 'none' : 'block';
     }
 }
 
 // Handle resize events
-window.addEventListener('resize', handleResize);
+window.addEventListener('resize', hideMobile);
 
 // Call the function initially when the page loads
-handleResize();
+hideMobile();
 
 
 const sidebar = document.getElementById('sidebar');
@@ -65,7 +66,6 @@ window.addEventListener('resize', resize);
 
 let isAnimating = true;
 
-
 nn(isAnimating);
 renderTorus(isAnimating);
 
@@ -83,3 +83,48 @@ renderTorus(isAnimating);
 //     renderTorus(isAnimating);
 //   }
 // });
+
+
+let jobTitles = ["AI Engineer", "Full-Stack Developer", "Product Designer", "Robotics Engineer"];
+let currentJob = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function typeEffect() {
+    let target = document.getElementById('job-title');
+    if(!target) return; // Return if element not found
+
+    if(charIndex === jobTitles[currentJob].length + 1 && !isDeleting) {
+        // Start deleting after the last character has been displayed
+        isDeleting = true;
+    } else if(isDeleting && charIndex === 0) {
+        // Move to the next job title and switch the direction
+        currentJob = (currentJob + 1) % jobTitles.length;
+        isDeleting = false;
+    }
+
+    target.innerHTML = jobTitles[currentJob].substring(0, charIndex) || "&nbsp;";
+
+    if(isDeleting) {
+        charIndex--;
+    } else {
+        charIndex++;
+    }
+
+    // Set the typing speed
+    let typingSpeed = 100;
+    if(isDeleting) {
+        typingSpeed /= 2; // Deleting is faster
+    }
+
+    // If a word is fully printed, wait 3s before start deleting
+    if(!isDeleting && charIndex === jobTitles[currentJob].length + 1) {
+        setTimeout(typeEffect, 3000);
+    } else {
+        setTimeout(typeEffect, typingSpeed);
+    }
+}
+
+// Call the function
+typeEffect();
+
