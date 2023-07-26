@@ -14,7 +14,8 @@ body {
 
 @media (max-width: 1080px) {
     .section {
-      margin-bottom: 10rem; /* change this to a value that works for you */
+      margin-bottom: 15rem; /* change this to a value that works for you */
+      min-height: 50vh;
     }
   }
   
@@ -35,6 +36,7 @@ body {
 @media screen and (max-width: 768px) {
     .project {
       justify-content: flex-start; /* or whatever you want the new behavior to be */
+      margin-bottom: 15rem;
     }
   }
 
@@ -185,4 +187,10 @@ h6 {
     .img-container img {
         max-height: 100vh;
     }
+}
+
+
+.header-img {
+    max-width: 100%;
+    height: auto;
 }
