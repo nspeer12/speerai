@@ -12,8 +12,8 @@ body {
 
 .section {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     scroll-snap-align: start;
 }
 
@@ -158,4 +158,14 @@ h6 {
 .section {
     padding-top: 12rem;
     padding-bottom: 12rem;
+}
+
+#dexter .col-xl-6,
+#dexter .col-lg-6,
+#dexter .col-md-12,
+#dexter .col-sm-12,
+#dexter .col-xs-12 {
+  padding: 0; /* Remove any padding */
+  margin: 0;  /* Remove any margin */
+  text-align: left; /* Align text to the left */
 }
