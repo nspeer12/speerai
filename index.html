@@ -49,18 +49,18 @@
   this.pImageConfig = {
     particles: {
       array: [],
-      density: 400,
-      color: '#fff',
+      density: 500,
+      color: '#e6e6e6',
       size: {
-        value: 1,
-        random: true,
+        value: 0.5,
+        random: false,
       },
       movement: {
         speed: 1,
         restless: {
-          enabled: true,
-          value: 100,
-          sync: false
+          enabled: false,
+          value: 10000,
+          sync: true
         }
       },
       interactivity: {
@@ -74,7 +74,7 @@
         },
         on_touch: {
           enabled: true,
-          action: 'repulse'
+          action: 'grab'
         },
         fn_array: []
       }
@@ -92,15 +92,15 @@
     },
     interactions: {
       repulse: {
-        distance: 50,
-        strength: 50
+        distance: 35,
+        strength: 30
       },
       big_repulse: {
-        distance: 3000,
+        distance: 300,
         strength: 200
       },
       grab: {
-        distance: 100,
+        distance: 10,
         line_width: 1,
       }
     },
@@ -212,11 +212,11 @@
     this.y = init_xy.y;
     this.dest_x = dest_xy.x;
     this.dest_y = dest_xy.y;
-    this.vx = (Math.random() - 0.5) * pImg.particles.movement.speed;
-    this.vy = (Math.random() - 0.5) * pImg.particles.movement.speed;
+    this.vx = (Math.random() - 0.3) * pImg.particles.movement.speed;
+    this.vy = (Math.random() - 0.3) * pImg.particles.movement.speed;
     this.acc_x = 0;
     this.acc_y = 0;
-    this.friction = Math.random() * 0.01 + 0.92;
+    this.friction = 0.94;
     this.restlessness = {
       max_displacement: Math.ceil(Math.random() * pImg.particles.movement.restless.value),
       x_jitter: pImg.functions.utils.randIntInRange(-3, 3),
@@ -258,8 +258,8 @@
         pImg.functions.particles.jitterParticle(p);
       } else {
         // otherwise, update position with approach to destination
-        p.acc_x = (p.dest_x - p.x) / 500;
-        p.acc_y = (p.dest_y - p.y) / 500;
+        p.acc_x = (p.dest_x - p.x) / 900;
+        p.acc_y = (p.dest_y - p.y) / 900;
         p.vx = (p.vx + p.acc_x) * p.friction;
         p.vy = (p.vy + p.acc_y) * p.friction;
         p.x += p.vx;
@@ -297,7 +297,7 @@
     const dx_mouse = p.x - pImg.mouse.x,
           dy_mouse = p.y - pImg.mouse.y,
           mouse_dist = Math.sqrt(dx_mouse * dx_mouse + dy_mouse * dy_mouse),
-          inv_strength = pImg.functions.utils.clamp(300 - args.strength, 10, 300);
+          inv_strength = pImg.functions.utils.clamp(400 - args.strength, 10, 300);
     if (mouse_dist <= args.distance) {
       p.acc_x = (p.x - pImg.mouse.x) / inv_strength;
       p.acc_y = (p.y - pImg.mouse.y) / inv_strength;
