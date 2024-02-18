@@ -15,8 +15,12 @@
       }
 
       @media (max-width: 768px) {
+        nav {
+          min-height: 500px;
+          height: auto; /* Adjust nav height for mobile responsiveness */
+        }
         nav img {
-          height: 50px;
+          height: 50px; /* Adjust image height for mobile responsiveness */
         }
         nav button {
           padding: 5px 10px;
@@ -41,8 +45,8 @@
   </head>
   
   <body>
-    <nav style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background-color: #000000; flex-wrap: wrap;">
-      <img src="public/img/nav.png" alt="Logo" style="height: 70px;">
+    <nav style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background-color: #000000; flex-wrap: wrap; height: auto;">
+      <img src="public/img/nav.png" alt="Logo" style="height: 100px;">
 <!-- Calendly link widget begin -->
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
@@ -125,7 +129,7 @@
       camera.aspect = window.innerWidth/window.innerHeight;
       camera.updateProjectionMatrix();
       // Adjust camera position based on device
-      camera.position.z = window.innerWidth < 768 ? 800 : 900; // Zoom out more on mobile
+      camera.position.z = window.innerWidth < 768 ? 1200 : 500; // Zoom out more on mobile
   
       // Add camera controls
       const tbControls = new TrackballControls(camera, renderer.domElement);
