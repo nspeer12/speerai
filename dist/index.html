@@ -1,0 +1,54 @@
+<head>
+    <style>
+      body { margin: 0; }
+  
+      #time-log {
+        position: absolute;
+        font-size: 12px;
+        font-family: sans-serif;
+        padding: 5px;
+        border-radius: 3px;
+        background-color: rgba(200, 200, 200, 0.1);
+        color: lavender;
+        bottom: 10px;
+        right: 10px;
+      }
+
+      @media (max-width: 768px) {
+        nav img {
+          height: 50px;
+        }
+        nav button {
+          padding: 5px 10px;
+          font-size: 14px;
+        }
+      }
+    </style>
+  
+
+    
+  
+    <!--  <script src="../../dist/three-globe.js" defer></script>-->
+  
+    <script src="//unpkg.com/satellite.js/dist/satellite.min.js"></script>
+    <script type="importmap">{ "imports": {
+      "three": "//unpkg.com/three/build/three.module.js",
+      "three/addons/": "//unpkg.com/three/examples/jsm/"
+    }}</script>
+    <script type="module" crossorigin src="/assets/index-cb5df813.js"></script>
+  </head>
+  
+  <body>
+    <nav style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background-color: #000000; flex-wrap: wrap;">
+      <img src="/assets/nav-867f65a2.png" alt="Logo" style="height: 70px;">
+<!-- Calendly link widget begin -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<button style="background-color: blue; color: white; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; border-radius: 3px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/d/32h-xgt-vx9?hide_gdpr_banner=1&text_color=000000'});return false;">Contact</button>
+<!-- Calendly link widget end -->
+    </nav>
+    <div id="globeViz"></div>
+    <div id="time-log"></div>
+  
+    
+  </body>
