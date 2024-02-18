@@ -15,6 +15,7 @@
     "@tweenjs/tween.js": "^21.0.0",
     "bootstrap": "^5.3.0",
     "bootstrap-icons": "^1.10.5",
-    "three": "^0.153.0"
+    "three": "^0.153.0",
+    "three-globe": "^2.30.3"
   }
 }
